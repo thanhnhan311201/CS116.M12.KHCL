@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>Student Information</title>
+                <link rel="stylesheet" href="/static/assets/css/style.css">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                <style>
+                        
+                        .student{
+                                background-image: url('https://mindxmaster.s3.amazonaws.com/wp-content/uploads/2017/09/1_python.jpg');
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                margin-top: 50px;
+                        }
+                        #DetailTitle { 
+                                text-align: center;
+                                padding: 10px 0 40px;
+                                color: #fff;
+                                font-size: 60px;
+                                font-family: 'Abril Fatface', cursive;
+                        }
+
+                        td {text-align: center; vertical-align: middle;
+                        }
+                        tr {display: table-row; vertical-align: inherit; border-color: inherit;
+                        }
+                        table.center {margin-left: auto; margin-right: auto;
+                        }
+
+                        .table-container{
+                                max-width: 1400px;
+                                margin-top: 50px;
+                                color: white;
+                                background-color: rgba(0,0,0,0.5);
+                        }
+
+                        td .text-left{
+                                font-family: monospace;
+                                height: 75px;
+                                text-align: start;
+                        }
+
+                </style>
+        </head>
+
+        <body>
+                {% include "index/header.html" %}
+
+                {% if user.is_authenticated %}
+                <div class="student">
+                        <h1 id="DetailTitle">Student Information</h1>
+                        <div class="flex justify-center" style="min-height: 100vh; margin-left: 350px; margin-right: 350px;">
+                                <table class="table table-container">
+                                        <thead class="thead-dark">
+                                          <tr>
+                                            <th scope="col">Student ID</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Class</th>
+                                            <th scope="col">Faculty</th>
+                                            <th scope="col">Age</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>                               
+                                        {% for student in STUDENT_INFO %}
+                                                <tr>
+                                                        <!-- <td class="text-left">{{student.ID}}</td>
+                                                        <td class="text-left">{{student.NAME}}</td>
+                                                        <td class="text-left">{{student.CLASS}}</td>
+                                                        <td class="text-left">{{student.FACULTY}}</td> 
+                                                        <td class="text-left">{{student.AGE}}</td> -->
+                                                        <td class="text-left">19521943</td>
+                                                        <td class="text-left">Thanh Nhan</td>
+                                                        <td class="text-left">KHCL2019.2</td>
+                                                        <td class="text-left">Computer Science</td> 
+                                                        <td class="text-left">19</td>
+                                                </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                </table>
+                        </div>
+                </div>
+                {% else %}
+                <div style="margin-top: 50px;">
+                        <h1>You are not login!!!</h1>
+                </div>        
+                {% endif %}
+
+                <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+                <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+                <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+        </body>
+</html>

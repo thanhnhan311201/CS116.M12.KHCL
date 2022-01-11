@@ -1,0 +1,13 @@
+Time-line:
+1. Pip install django
+2. Tạo project django
+3. Run thử cái project
+4. Tạo 1 cái appication
+5. Gõ vài dòng code html để hiển thị các đoạn các câu.
+6. Tạo một cái template để hiển thị mẫu.
+5. Tạo frontend để hiện thị database.
+6. Tạo database
+7. Tạo API
+8. Kết nối database để hiển thị lên frontend
+9. Tạo Authentication
+10. Code authentication để cho phép truy cập cái trang web frontend db
